@@ -1,0 +1,194 @@
+﻿
+@{
+    ViewData["Title"] = "Registration";
+}
+
+<h1>                                          Welcome to the Coffee Shop Registration! <br />
+</h1>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=text], input[type=password], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+</style>
+</head>
+
+
+<form method="Post"  action="/reg/regprocess" style="border:1px solid #ccc">
+  <div class="container">
+    <p>Please fill in this form for the Registration!</p>
+ 
+
+    <label for="first-name"><b>First Name</b></label>
+    <input type="text" name="firstname" placeholder="Enter First Name" name="first-name" required>
+
+    <label for="last-name"><b>Last Name</b></label>
+    <input type="text" name="lastname" placeholder="Enter Last Name" name="last-name" >
+    <span  style="color:red; font-weight:bold"> @ViewBag.LastNameMsg </span>
+    <br />
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+    <span  style="color:red; font-weight:bold"> @ViewBag.EmailMsg</span>
+    <br />
+ 
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <br />
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    <br />
+
+            <label for="type">State</label>
+     <select id="State" name="State">>
+            <option value="Alabama">AL</option>
+            <option value="Alaska">AK</option>
+            <option value="Arizona">AZ</option>
+            <option value="Arkansas">AR</option>
+            <option value="California">CA</option>
+            <option value="Colorado">CO</option>
+            <option value="Connecticut">CT</option>
+            <option value="Delaware">DE</option>
+            <option value="District of Columbia">DC</option>
+            <option value="Florida">FL</option>
+            <option value="Georgia">GA</option>
+            <option value="Hawaii">HI</option>
+            <option value="Idaho">ID</option>
+            <option value="Illinois">IL</option>
+            <option value="Indiana">IN</option>
+            <option value="Iowa">IA</option>
+            <option value="Kansas">KS</option>
+            <option value="Kentucky">KY</option>
+            <option value="Louisiana">LA</option>
+            <option value="Maine">ME</option>
+            <option value="Maryland">MD</option>
+            <option value="Massachusetts">MA</option>
+            <option value="Michigan">MI</option>
+            <option value="Minnesota">MN</option>
+            <option value="Mississippi">MS</option>
+            <option value="Missouri">MO</option>
+            <option value="Montana">MT</option>
+            <option value="Nebraska">NE</option>
+            <option value="Nevada">NV</option>
+            <option value="New Hampshire">NH</option>
+            <option value="New Jersey">NJ</option>
+            <option value="New Mexico">NM</option>
+            <option value="New York">NY</option>
+            <option value="North Carolina">NC</option>
+            <option value="North Dakota">ND</option>
+            <option value="Ohio">OH</option>
+            <option value="Oklahoma">OK</option>
+            <option value="Oregon">OR</option>
+            <option value="Pennsylvania">PA</option>
+            <option value="Rhode Island">RI</option>
+            <option value="South Carolina">SC</option>
+            <option value="South Dakota">SD</option>
+            <option value="Tennessee">TN</option>
+            <option value="Texas">TX</option>
+            <option value="Utah">UT</option>
+            <option value="Vermont">VT</option>
+            <option value="Virginia">VA</option>
+            <option value="Washington">WA</option>
+            <option value="West Virginia">WV</option>
+            <option value="Wisconsin">WI</option>
+            <option value="Wyoming">WY</option>
+        </select>
+         <br />
+
+         <label for="type">Favorite Coffee</label>
+     <select id="FavCoffee" name="FavCoffee">
+          <option value="Dark">Dark</option>
+          <option value="Mild">Mild</option>
+          <option value="Light">Light</option>      
+     </select>
+     <br />
+
+        <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+    
+
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Register</button>
+    </div>
+  </div>
+</form>
+
+
